@@ -4,21 +4,16 @@
     </head>
     <body>
     	<div>
-    	<h1><a href="">First Django Girl Blog</a><h1>
+    		<h1><a href="">First Django Girl Blog</a><h1>
     	</div>
 
-    	<div>
-
-    		<p>published: 23.04.2016, 16:23</p>
-    		<h2><a href="">My first post</a></h2>
-        	<p>Hi there!</p>
-        	<p>It works!</p>
-    	</div>
-
-    	<div>
-    		<p>published: 23.04.2016, 16:30</p>
-    		<h2><a href="">My second post</a></h2>
-    		<p>tdyty. Agyjfgy gjf xd khukul. Fyjf fjhfd jjd tjghlst.</p>
-    	</div>
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+	{% endfor %}
+    	   	
     </body>
 </html>
